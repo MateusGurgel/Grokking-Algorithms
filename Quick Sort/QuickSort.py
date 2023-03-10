@@ -1,23 +1,16 @@
+#8.225440979003906e-05
+#0.00011038780212402344
+#0.00011301040649414062
+
 def quick_sort(array):
 
     if (len(array) < 2):
         return array 
     
-    pivot = array.pop(0)
-
-    lessPartition = []
-    morePartition = []
-
-
-    for i in array:
-
-        if (i < pivot):
-            lessPartition.append(i)
-
-        else:
-            morePartition.append(i)
-
-    return quick_sort(lessPartition) + [pivot] + quick_sort(morePartition)
+    pivot = array[0]
+    menores = [i for i in array[1:] if i <= pivot]
+    maiores = [i for i in array[1:] if i > pivot]
+    return quick_sort(menores) + [pivot] + quick_sort(maiores)
     
 numbers = [5,3,4,2,1]
 
