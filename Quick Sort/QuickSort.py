@@ -8,9 +8,9 @@ def quick_sort(array):
         return array 
     
     pivot = array[0]
-    menores = [i for i in array[1:] if i <= pivot]
-    maiores = [i for i in array[1:] if i > pivot]
-    return quick_sort(menores) + [pivot] + quick_sort(maiores)
+    minors = [i for i in array[1:] if i <= pivot]
+    bigger = [i for i in array[1:] if i > pivot]
+    return quick_sort(minors) + [pivot] + quick_sort(bigger)
     
 numbers = [5,3,4,2,1]
 
