@@ -9,17 +9,16 @@ def get_best_station(coveredStates):
     bestStation = None
     bestStationCovered = float('inf')
      
-    for station in stations:
-        statesAreadyCovered = len(stations[station] & coveredStates)
+    for station, states in stations.items():
+        statesAlreadyCovered = len(states & coveredStates)
 
-        if (statesAreadyCovered < bestStationCovered):
+        if statesAlreadyCovered < bestStationCovered:
             bestStation = station
-            bestStationCovered = statesAreadyCovered
+            bestStationCovered = statesAlreadyCovered
 
     return bestStation
         
 def get_best_states(numberOfStations):
-
     bestStates = set()
 
     for i in range(numberOfStations):
@@ -31,12 +30,10 @@ def get_best_states(numberOfStations):
     return bestStates
 
 def get_best_stations(numberOfStations):
-
     bestStations = set()
     bestStates = set()
 
     for i in range(numberOfStations):
-
         bestStation = get_best_station(bestStates)
         bestStations.add(bestStation)
 
